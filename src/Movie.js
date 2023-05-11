@@ -11,7 +11,7 @@ export default function movie(props) {
         <li className='list-group-item'>
             {props.title}
             {props.id}
-            <button className='btn btn-sm btn-danger float-end'>X</button>
+            <button className='btn btn-sm btn-danger float-end' onClick={() => (props.deleteMovie(props.id))}>X</button>
             <div className='float-end'>{stars}</div>
         </li>
 

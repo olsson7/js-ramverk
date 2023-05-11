@@ -19,6 +19,10 @@ export default function AddMovieForm() {
     event.target.reset();
   };
 
+  function deleteMovie(id){
+    setMovies(movies.filter((movie) => movie.id != id));
+  }
+
    
   return (
     <div>
@@ -39,13 +43,13 @@ export default function AddMovieForm() {
             <option value="5">5</option>
           </select>
 
-          <input type="submit" className="btn btn-success mt-3" value="Spara film" />
+          <input type="submit" id="SaveBtn" className="btn btn-success mt-3" value="Spara film" />
         </form>
       </fieldset>
 
       <ul className='list-group'>
         {movies.map((movie) => ( 
-          <Movie key={movie.id} id={movie.id} title={movie.title} rating={movie.rating} />
+          <Movie key={movie.id} id={movie.id} title={movie.title} rating={movie.rating} deleteMovie={deleteMovie} />
         ))}
       </ul>
 
