@@ -42,7 +42,7 @@ export default function AddMovieForm() {
         </form>
       </fieldset>
 
-      <ul className="list-group">
+      <ul className='list-group'>
         {movies.map((movie, index) => (
           <Movie key={index} title={movie.title} rating={movie.rating} />
         ))}
