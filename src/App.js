@@ -1,4 +1,5 @@
 import AddMovieForm from "./AddMovieForm";
+import "./App.css"
 
 
 function App() {
