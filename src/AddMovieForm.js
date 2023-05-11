@@ -8,13 +8,14 @@ export default function AddMovieForm() {
     event.preventDefault();
     const title = event.target.elements.title.value;
     const rating = event.target.elements.rating.value;
+    const id = movies.length > 0 ? movies[movies.length -1].id + 1 : 1;
 
     if (!title || rating == 0) {
         window.alert("Måste fylla i både titel och betyg!");  
         return;
       }
 
-    setMovies(movies.concat({ title, rating }));
+    setMovies(movies.concat({id, title, rating }));
     event.target.reset();
   };
 
@@ -43,8 +44,8 @@ export default function AddMovieForm() {
       </fieldset>
 
       <ul className='list-group'>
-        {movies.map((movie, index) => (
-          <Movie key={index} title={movie.title} rating={movie.rating} />
+        {movies.map((movie) => ( 
+          <Movie key={movie.id} id={movie.id} title={movie.title} rating={movie.rating} />
         ))}
       </ul>
 
