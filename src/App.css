@@ -4,6 +4,14 @@
     margin-right: 5px;
 }
 
+body.container {
+    width: 50%;
+}
+
 #SaveBtn {
     margin-bottom: 10px;
+}
+
+#alfa {
+    margin-right: 10px;
 }

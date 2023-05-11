@@ -23,6 +23,14 @@ export default function AddMovieForm() {
     setMovies(movies.filter((movie) => movie.id != id));
   }
 
+  function sortByTitle(){
+    setMovies(movies.concat().sort((a, b) => a.title.localeCompare(b.title)));
+  }
+
+  function sortByRating(){
+    setMovies(movies.concat().sort((a, b) => b.rating - a.rating));
+  }
+
    
   return (
     <div>
@@ -47,11 +55,16 @@ export default function AddMovieForm() {
         </form>
       </fieldset>
 
+      <h2>Inlagda filmer</h2>
+
       <ul className='list-group'>
         {movies.map((movie) => ( 
           <Movie key={movie.id} id={movie.id} title={movie.title} rating={movie.rating} deleteMovie={deleteMovie} />
         ))}
       </ul>
+
+      <button id='alfa' className="btn btn-primary mt-3" onClick={sortByTitle}>Alfabetisk ordning</button>
+      <button id='betyg' className="btn btn-primary mt-3" onClick={sortByRating}>Betygsordning</button>
 
     </div>
   );
