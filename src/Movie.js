@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React from 'react'
 
 
 export default function movie(props) {
@@ -10,7 +10,6 @@ export default function movie(props) {
     return (
         <li className='list-group-item'>
             {props.title}
-            {props.id}
             <button className='btn btn-sm btn-danger float-end' onClick={() => (props.deleteMovie(props.id))}>X</button>
             <div className='float-end'>{stars}</div>
         </li>
